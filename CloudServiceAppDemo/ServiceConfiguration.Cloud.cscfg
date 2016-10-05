@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="CloudServiceAppDemo" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="AdsWeb">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName={YOUR_ACCOUNT};AccountKey={YOUR_KEY}" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName={YOUR_ACCOUNT};AccountKey={YOUR_KEY}" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="33387e06-a04f-4b54-bb04-73374d2d2850" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="AdsWorker">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName={YOUR_ACCOUNT};AccountKey={YOUR_KEY}" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName={YOUR_ACCOUNT};AccountKey={YOUR_KEY}" />
+      <Setting name="ContosoAdsDbConnectionString" value="Server=tcp:{YOUR_NAMESPACE}.database.windows.net,1433;Initial Catalog={YOUR_DB};Persist Security Info=False;User ID={user_name};Password={password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="33387e06-a04f-4b54-bb04-73374d2d2850" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
